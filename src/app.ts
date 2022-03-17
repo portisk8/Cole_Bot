@@ -2,17 +2,20 @@ import { Context, Markup, Telegraf, Telegram } from "telegraf";
 import { Update } from "typegram";
 
 import config from "./config";
+import { KeyBoardType } from "./enums/keyBoardType";
+import { KeyBoard } from "./keyboard";
 
 const token: string = config.BOT_TOKEN as string;
-
 const telegram: Telegram = new Telegram(token);
-
 const bot: Telegraf<Context<Update>> = new Telegraf(token);
-
 const chatId: string = process.env.CHAT_ID as string;
 
+const keyboard = new KeyBoard();
 bot.start((ctx) => {
-  ctx.reply("Hello " + ctx.from.first_name + "!");
+  ctx.reply(
+    "Hello " + ctx.from.first_name + "!",
+    keyboard.getKeyBoardByType(KeyBoardType.Main)
+  );
 });
 
 bot.help((ctx) => {
