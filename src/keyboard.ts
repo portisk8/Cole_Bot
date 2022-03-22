@@ -8,11 +8,11 @@ export class KeyBoard {
     switch (type) {
       case KeyBoardType.Main:
         return Markup.keyboard([
-          ["Estado del Puente"],
+          ["✅ Estado del Puente ✅"],
           ["Sarmiento Puerto", "Sarmiento UNNE"],
           ["Barranqueras Puerto", "Barranqueras UNNE"],
           ["Campus Corrientes", "Campus Resistencia"],
-          ["Puntos de Recarga"],
+          ["📍 Puntos de Recarga"],
           ["Deja un Comentario ..."],
           ["Ayuda"],
         ]);

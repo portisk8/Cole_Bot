@@ -4,7 +4,7 @@
   "description": "Telegram bot",
   "main": "dist/app.js",
   "scripts": {
-    "start:dev": "ts-node-dev --respawn --transpile-only app.ts",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,11 +21,15 @@
   "homepage": "https://github.com/portisk8/Cole_Bot#readme",
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.0",
+    "ts-node-dev": "^1.1.8",
     "tslint": "^6.1.3",
-    "typescript": "^4.6.2",
-    "ts-node-dev": "^1.1.8"
+    "typescript": "^4.6.2"
   },
   "dependencies": {
+    "dayjs": "^1.11.0",
     "dotenv": "^16.0.0",
     "telegraf": "^4.7.0"
   }
