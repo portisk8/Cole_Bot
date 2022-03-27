@@ -1,17 +1,19 @@
-import Colectivo from "../Schemas/ColectivoSchema";
-import Horario from "../Schemas/HorarioSchema";
-import { DayOfWeekEnum, DayOfWeekStringEnum } from "../enums/dayOfWeekEnum";
+import Colectivo from '../Schemas/ColectivoSchema';
+import Horario from '../Schemas/HorarioSchema';
+import { DayOfWeekEnum, DayOfWeekStringEnum } from '../enums/dayOfWeekEnum';
 
 const colectivos = [
   {
-    name: "Colectivo Sarmiento",
-    tipo: "Sarmiento",
-    empresa: "ATACO NORTE S.A.",
+    name: 'Colectivo Sarmiento',
+    tipo: 'Sarmiento',
+    empresa: 'ATACO NORTE S.A.',
     horarios: [
       {
-        partidaDesde: "UNNE",
-        diaSemana: "Lunes",
+        partidaDesde: 'UNNE',
+        diaSemana: 'Lunes',
         diaSemanaNumero: 1,
+        title: '🚌 *Sarmiento / Directo* 🚌',
+        subtitle: 'Con salida desde la *UNNE-Resistencia*',
         horas: [
           new Date().setHours(5, 0),
           new Date().setHours(5, 20),
@@ -52,13 +54,15 @@ const colectivos = [
           new Date().setHours(19, 50),
           new Date().setHours(21, 20),
           new Date().setHours(21, 50),
-          new Date().setHours(23, 50),
-        ],
+          new Date().setHours(23, 50)
+        ]
       },
       {
-        partidaDesde: "Puerto",
-        diaSemana: "Lunes",
+        partidaDesde: 'Puerto',
+        diaSemana: 'Lunes',
         diaSemanaNumero: 1,
+        title: '🚌 *Sarmiento / Directo* 🚌',
+        subtitle: 'Con salida desde el *Puerto-Corrientes*',
         horas: [
           new Date().setHours(6, 5),
           new Date().setHours(6, 25),
@@ -100,14 +104,16 @@ const colectivos = [
           new Date().setHours(20, 50),
           new Date().setHours(22, 20),
           new Date().setHours(22, 50),
-          new Date().setHours(0, 40),
-        ],
+          new Date().setHours(0, 40)
+        ]
       },
       //SABADO
       {
-        partidaDesde: "UNNE",
-        diaSemana: "Sabado",
+        partidaDesde: 'UNNE',
+        diaSemana: 'Sabado',
         diaSemanaNumero: 1,
+        title: '🚌 *Sarmiento / Directo* 🚌',
+        subtitle: 'Con salida desde la *UNNE-Resistencia*',
         horas: [
           new Date().setHours(5, 20),
           new Date().setHours(5, 50),
@@ -137,13 +143,15 @@ const colectivos = [
           new Date().setHours(19, 50),
           new Date().setHours(21, 20),
           new Date().setHours(21, 50),
-          new Date().setHours(23, 50),
-        ],
+          new Date().setHours(23, 50)
+        ]
       },
       {
-        partidaDesde: "Puerto",
-        diaSemana: "Sabado",
+        partidaDesde: 'Puerto',
+        diaSemana: 'Sabado',
         diaSemanaNumero: 6,
+        title: '🚌 *Sarmiento / Directo* 🚌',
+        subtitle: 'Con salida desde el *Puerto-Corrientes*',
         horas: [
           new Date().setHours(6, 25),
           new Date().setHours(6, 50),
@@ -177,14 +185,16 @@ const colectivos = [
           new Date().setHours(22, 20),
           new Date().setHours(22, 45),
           new Date().setHours(22, 50),
-          new Date().setHours(0, 40),
-        ],
+          new Date().setHours(0, 40)
+        ]
       },
       //DOMINGO Y FERIADO
       {
-        partidaDesde: "UNNE",
-        diaSemana: "Domingo",
+        partidaDesde: 'UNNE',
+        diaSemana: 'Domingo',
         diaSemanaNumero: 0,
+        title: '🚌 *Sarmiento / Directo* 🚌',
+        subtitle: 'Con salida desde la *UNNE-Resistencia*',
         horas: [
           new Date().setHours(5, 20),
           new Date().setHours(5, 50),
@@ -212,13 +222,15 @@ const colectivos = [
           new Date().setHours(21, 5),
           new Date().setHours(21, 20),
           new Date().setHours(21, 40),
-          new Date().setHours(23, 30),
-        ],
+          new Date().setHours(23, 30)
+        ]
       },
       {
-        partidaDesde: "Puerto",
-        diaSemana: "Domingo",
+        partidaDesde: 'Puerto',
+        diaSemana: 'Domingo',
         diaSemanaNumero: 0,
+        title: '🚌 *Sarmiento / Directo* 🚌',
+        subtitle: 'Con salida desde el *Puerto-Corrientes*',
         horas: [
           new Date().setHours(6, 20),
           new Date().setHours(6, 50),
@@ -246,20 +258,22 @@ const colectivos = [
           new Date().setHours(20, 50),
           new Date().setHours(22, 20),
           new Date().setHours(22, 35),
-          new Date().setHours(0, 25),
-        ],
-      },
-    ],
+          new Date().setHours(0, 25)
+        ]
+      }
+    ]
   },
   {
-    name: "Colectivo Barranqueras",
-    tipo: "Barranqueras",
-    empresa: "ATACO NORTE S.A.",
+    name: 'Colectivo Barranqueras',
+    tipo: 'Barranqueras',
+    empresa: 'ATACO NORTE S.A.',
     horarios: [
       {
-        partidaDesde: "UNNE",
-        diaSemana: "Lunes",
+        partidaDesde: 'UNNE',
+        diaSemana: 'Lunes',
         diaSemanaNumero: 1,
+        title: '🚌 *Barranqueras* 🚌',
+        subtitle: 'Con salida desde la *UNNE-Resistencia*',
         horas: [
           new Date().setHours(5, 10),
           new Date().setHours(5, 30),
@@ -287,13 +301,15 @@ const colectivos = [
           new Date().setHours(19, 50),
           new Date().setHours(21, 15),
           new Date().setHours(21, 55),
-          new Date().setHours(23, 50),
-        ],
+          new Date().setHours(23, 50)
+        ]
       },
       {
-        partidaDesde: "Puerto",
-        diaSemana: "Lunes",
+        partidaDesde: 'Puerto',
+        diaSemana: 'Lunes',
         diaSemanaNumero: 1,
+        title: '🚌 *Barranqueras* 🚌',
+        subtitle: 'Con salida desde el *Puerto-Corrientes*',
         horas: [
           new Date().setHours(6, 10),
           new Date().setHours(6, 30),
@@ -320,15 +336,17 @@ const colectivos = [
           new Date().setHours(20, 50),
           new Date().setHours(22, 20),
           new Date().setHours(22, 50),
-          new Date().setHours(0, 40),
-        ],
+          new Date().setHours(0, 40)
+        ]
       },
       //SABADO
 
       {
-        partidaDesde: "UNNE",
-        diaSemana: "Sabado",
+        partidaDesde: 'UNNE',
+        diaSemana: 'Sabado',
         diaSemanaNumero: 6,
+        title: '🚌 *Barranqueras* 🚌',
+        subtitle: 'Con salida desde la *UNNE-Resistencia*',
         horas: [
           new Date().setHours(5, 10),
           new Date().setHours(5, 20),
@@ -354,13 +372,15 @@ const colectivos = [
           new Date().setHours(19, 50),
           new Date().setHours(21, 15),
           new Date().setHours(21, 50),
-          new Date().setHours(23, 30),
-        ],
+          new Date().setHours(23, 30)
+        ]
       },
       {
-        partidaDesde: "Puerto",
-        diaSemana: "Sabado",
+        partidaDesde: 'Puerto',
+        diaSemana: 'Sabado',
         diaSemanaNumero: 6,
+        title: '🚌 *Barranqueras* 🚌',
+        subtitle: 'Con salida desde el *Puerto-Corrientes*',
         horas: [
           new Date().setHours(6, 15),
           new Date().setHours(6, 50),
@@ -382,14 +402,16 @@ const colectivos = [
           new Date().setHours(20, 30),
           new Date().setHours(20, 50),
           new Date().setHours(22, 20),
-          new Date().setHours(0, 30),
-        ],
+          new Date().setHours(0, 30)
+        ]
       },
       //DOMINGO Y FERIADO
       {
-        partidaDesde: "UNNE",
-        diaSemana: "Domingo",
+        partidaDesde: 'UNNE',
+        diaSemana: 'Domingo',
         diaSemanaNumero: 0,
+        title: '🚌 *Barranqueras* 🚌',
+        subtitle: 'Con salida desde la *UNNE-Resistencia*',
         horas: [
           new Date().setHours(5, 40),
           new Date().setHours(7, 20),
@@ -409,13 +431,15 @@ const colectivos = [
           new Date().setHours(19, 15),
           new Date().setHours(19, 40),
           new Date().setHours(21, 30),
-          new Date().setHours(23, 20),
-        ],
+          new Date().setHours(23, 20)
+        ]
       },
       {
-        partidaDesde: "Puerto",
-        diaSemana: "Domingo",
+        partidaDesde: 'Puerto',
+        diaSemana: 'Domingo',
         diaSemanaNumero: 0,
+        title: '🚌 *Barranqueras* 🚌',
+        subtitle: 'Con salida desde el *Puerto-Corrientes*',
         horas: [
           new Date().setHours(6, 40),
           new Date().setHours(8, 20),
@@ -435,20 +459,22 @@ const colectivos = [
           new Date().setHours(20, 40),
           new Date().setHours(22, 5),
           new Date().setHours(22, 25),
-          new Date().setHours(0, 15),
-        ],
-      },
-    ],
+          new Date().setHours(0, 15)
+        ]
+      }
+    ]
   },
   {
-    name: "Colectivo CAMPUS",
-    tipo: "Campus",
-    empresa: "ERSA",
+    name: 'Colectivo CAMPUS',
+    tipo: 'Campus',
+    empresa: 'ERSA',
     horarios: [
       {
-        partidaDesde: "Terminal Resistencia",
-        diaSemana: "Lunes",
+        partidaDesde: 'Terminal Resistencia',
+        diaSemana: 'Lunes',
         diaSemanaNumero: 1,
+        title: '🚌 *CAMPUS* 🚌',
+        subtitle: 'Con salida desde la *Terminal-Resistencia*',
         horas: [
           new Date().setHours(5, 35),
           new Date().setHours(6, 25),
@@ -469,13 +495,15 @@ const colectivos = [
           new Date().setHours(18, 55),
           new Date().setHours(19, 45),
           new Date().setHours(20, 47),
-          new Date().setHours(21, 15),
-        ],
+          new Date().setHours(21, 15)
+        ]
       },
       {
-        partidaDesde: "UNNE",
-        diaSemana: "Lunes",
+        partidaDesde: 'UNNE',
+        diaSemana: 'Lunes',
         diaSemanaNumero: 1,
+        title: '🚌 *CAMPUS* 🚌',
+        subtitle: 'Con salida desde la *UNNE-Corrientes*',
         horas: [
           new Date().setHours(5, 35),
           new Date().setHours(6, 25),
@@ -496,11 +524,11 @@ const colectivos = [
           new Date().setHours(18, 55),
           new Date().setHours(19, 45),
           new Date().setHours(20, 35),
-          new Date().setHours(21, 25),
-        ],
-      },
-    ],
-  },
+          new Date().setHours(21, 25)
+        ]
+      }
+    ]
+  }
 ];
 
 const ColectivoHorariosLunesViernes = async () => {
@@ -513,7 +541,7 @@ const ColectivoHorariosLunesViernes = async () => {
       let busNew = new Colectivo({
         name: colec.name,
         tipo: colec.tipo,
-        empresa: colec.empresa,
+        empresa: colec.empresa
       });
       busNew = await busNew.save();
       //Lunes - Viernes
@@ -523,7 +551,7 @@ const ColectivoHorariosLunesViernes = async () => {
             horaCole.diaSemanaNumero != DayOfWeekEnum.SABADO &&
             horaCole.diaSemanaNumero != DayOfWeekEnum.DOMINGO
           ) {
-            let diaSemanaStr = "";
+            let diaSemanaStr = '';
             switch (index) {
               case 1:
                 diaSemanaStr = DayOfWeekStringEnum[DayOfWeekEnum.LUNES];
@@ -545,8 +573,10 @@ const ColectivoHorariosLunesViernes = async () => {
               partidaDesde: horaCole.partidaDesde,
               diaSemana: diaSemanaStr,
               diaSemanaNumero: index,
+              title: horaCole.title,
+              subtitle: horaCole.subtitle,
               horas: horaCole.horas,
-              colectivoId: busNew._id,
+              colectivoId: busNew._id
             };
             await Horario.create(horarioNew);
           }
@@ -560,8 +590,10 @@ const ColectivoHorariosLunesViernes = async () => {
             partidaDesde: horaCole.partidaDesde,
             diaSemana: DayOfWeekStringEnum[DayOfWeekEnum.SABADO],
             diaSemanaNumero: DayOfWeekEnum.SABADO,
+            title: horaCole.title,
+            subtitle: horaCole.subtitle,
             horas: horaCole.horas,
-            colectivoId: busNew._id,
+            colectivoId: busNew._id
           };
           await Horario.create(horarioNew);
         }
@@ -570,8 +602,10 @@ const ColectivoHorariosLunesViernes = async () => {
             partidaDesde: horaCole.partidaDesde,
             diaSemana: DayOfWeekStringEnum[DayOfWeekEnum.DOMINGO],
             diaSemanaNumero: DayOfWeekEnum.DOMINGO,
+            title: horaCole.title,
+            subtitle: horaCole.subtitle,
             horas: horaCole.horas,
-            colectivoId: busNew._id,
+            colectivoId: busNew._id
           };
           await Horario.create(horarioNew);
         }

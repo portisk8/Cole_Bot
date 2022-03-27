@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Telegram bot",
   "main": "dist/app.js",
+  "node": "16.13.2",
+  "npm": "8.1.2",
   "scripts": {
     "start:dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",

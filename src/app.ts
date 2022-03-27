@@ -48,8 +48,17 @@ bot.command('keyboard', (ctx) => {
   );
 });
 
-bot.on('text', (ctx) => {
-  ctx.reply(action.getResult(ctx.message.text));
+bot.on('text', async (ctx) => {
+  try {
+    const result = await action.getResult(ctx.message.text);
+    let resultMsg = result.replace('-', '\\-');
+    if (result && result.trim() != '')
+      ctx.reply(result, {
+        parse_mode: 'Markdown'
+      });
+  } catch (error) {
+    console.error(error);
+  }
 
   if (chatId) {
     telegram.sendMessage(
