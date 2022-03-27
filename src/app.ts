@@ -4,12 +4,14 @@ import { Update } from "typegram";
 import config from "./config";
 import { KeyBoardType } from "./enums/keyBoardType";
 import { KeyBoard } from "./keyboard";
-
+import "./database";
+import { InitialSetup } from "./InitialSetup/InitialSetup";
 const token: string = config.BOT_TOKEN as string;
 const telegram: Telegram = new Telegram(token);
 const bot: Telegraf<Context<Update>> = new Telegraf(token);
 const chatId: string = process.env.CHAT_ID as string;
 
+InitialSetup();
 const keyboard = new KeyBoard();
 bot.start((ctx) => {
   ctx.reply(
