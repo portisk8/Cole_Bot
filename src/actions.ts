@@ -33,8 +33,9 @@ export class Action {
       );
       if (colectivoSelectedByTipo != null) {
         let horario = colectivoSelectedByTipo.horarios.find(
-          (h: { diaSemanaNumero: number }) =>
-            h.diaSemanaNumero == diaSemanaActual
+          (h: any) =>
+            h.diaSemanaNumero == diaSemanaActual &&
+            text.includes(h.partidaDesde.toLowerCase())
         );
         if (horario != null) {
           let result = getResultFormat(horario);
