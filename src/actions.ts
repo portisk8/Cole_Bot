@@ -1,9 +1,13 @@
 import { ActionType } from './enums/actionType';
 import { ActionIntent } from './utils/ActionIntents';
 import dayjs from 'dayjs';
+import timeZone from 'dayjs/plugin/timezone';
+import dayJSUtc from 'dayjs/plugin/utc';
 import ColectivoSchema from './Schemas/ColectivoSchema';
 import HorarioSchema from './Schemas/HorarioSchema';
 
+dayjs.extend(dayJSUtc);
+dayjs.extend(timeZone);
 export class Action {
   private actionIntent = new ActionIntent();
   constructor() {}
@@ -21,7 +25,7 @@ export class Action {
   }
   async getHorarioColectivo(text: string): Promise<string> {
     text = text.toLowerCase();
-    const diaSemanaActual = dayjs().day();
+    const diaSemanaActual = dayjs().tz('America/Argentina/Buenos_Aires').day();
     let colectivos = await this.getAllColectivos();
     if (colectivos && colectivos.length > 0) {
       let colectivoSelectedByTipo = colectivos.find((c: { tipo: string }) =>
@@ -45,7 +49,9 @@ export class Action {
   }
 
   getEstadoPuente(): string {
-    let dayFormatted = dayjs().format('DD/MM/YYYY - HH:mm');
+    let dayFormatted = dayjs()
+      .tz('America/Argentina/Buenos_Aires')
+      .format('DD/MM/YYYY - HH:mm');
     return `Actualización ${dayFormatted} Hs Tránsito del Puente #Chaco #Corrientes - *NORMAL*`;
   }
 
@@ -66,8 +72,8 @@ function getResultFormat(horario: any): string {
   let horasOrdenadas = horario.horas.sort(
     (x: Date, y: Date) => +new Date(x) - +new Date(y)
   );
-  let horaActual = dayjs().hour();
-  let minutoActual = dayjs().minute();
+  let horaActual = dayjs().tz('America/Argentina/Buenos_Aires').hour();
+  let minutoActual = dayjs().tz('America/Argentina/Buenos_Aires').minute();
   for (const hora of horasOrdenadas) {
     let horaCole = dayjs(hora).hour();
     let minutoCole = dayjs(hora).minute();
