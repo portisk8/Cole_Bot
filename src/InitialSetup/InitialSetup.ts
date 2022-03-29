@@ -470,7 +470,7 @@ const colectivos = [
     empresa: 'ERSA',
     horarios: [
       {
-        partidaDesde: 'Terminal Resistencia',
+        partidaDesde: 'Resistencia',
         diaSemana: 'Lunes',
         diaSemanaNumero: 1,
         title: '🚌 *CAMPUS* 🚌',
@@ -499,7 +499,7 @@ const colectivos = [
         ]
       },
       {
-        partidaDesde: 'UNNE',
+        partidaDesde: 'Corrientes',
         diaSemana: 'Lunes',
         diaSemanaNumero: 1,
         title: '🚌 *CAMPUS* 🚌',

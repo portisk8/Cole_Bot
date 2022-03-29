@@ -18,9 +18,20 @@ const action = new Action();
 const keyboard = new KeyBoard();
 
 bot.start((ctx) => {
-  ctx.reply(
-    'Hello ' + ctx.from.first_name + '!',
-    keyboard.getKeyBoardByType(KeyBoardType.Main)
+  telegram.sendMessage(
+    ctx.chat.id,
+    'Hola ' +
+      ctx.from.first_name +
+      '!\n<strong>**** ColeBot te da la bienvenida! ****</strong>',
+    { parse_mode: 'HTML' }
+  );
+  telegram.sendMessage(
+    ctx.chat.id,
+    'Utiliza el teclado personalizado para obtener el horario de los colectivos Chaco-Corrientes.\nTambién podrás visualizar el Estado del puente con solo presionar el boton <strong>"✅ Estado del Puente ✅"</strong>',
+    {
+      reply_markup: keyboard.getKeyBoardByType(KeyBoardType.Main)?.reply_markup,
+      parse_mode: 'HTML'
+    }
   );
 });
 
@@ -68,9 +79,6 @@ bot.on('text', async (ctx) => {
   }
 });
 
-// // Enable graceful stop
-// process.once('SIGINT', () => bot.stop('SIGINT'));
-// process.once('SIGTERM', () => bot.stop('SIGTERM'));
 // Start webhook via launch method (preferred)
 if (config.USE_WEBHOOK) {
   bot.launch({
@@ -82,3 +90,6 @@ if (config.USE_WEBHOOK) {
 } else {
   bot.launch();
 }
+// // // Enable graceful stop
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));

@@ -76,8 +76,9 @@ function getResultFormat(horario: any): string {
   let horaActual = dayjs().tz('America/Argentina/Buenos_Aires').hour();
   let minutoActual = dayjs().tz('America/Argentina/Buenos_Aires').minute();
   for (const hora of horasOrdenadas) {
-    let horaCole = dayjs(hora).hour();
-    let minutoCole = dayjs(hora).minute();
+    let horarioCole = dayjs.tz(hora, 'America/Argentina/Buenos_Aires');
+    let horaCole = horarioCole.hour();
+    let minutoCole = horarioCole.minute();
     if (
       !proximoSeteado &&
       (horaCole > horaActual ||
@@ -86,12 +87,12 @@ function getResultFormat(horario: any): string {
       stringResult +=
         '\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\n';
       stringResult += '     Este es el próximo:\n';
-      stringResult += '                ' + dayjs(hora).format('HH:mm') + '\n';
+      stringResult += '                ' + horarioCole.format('HH:mm') + '\n';
       stringResult +=
         '\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\\*\n';
       proximoSeteado = true;
     } else {
-      stringResult += '                ' + dayjs(hora).format('HH:mm') + '\n';
+      stringResult += '                ' + horarioCole.format('HH:mm') + '\n';
     }
   }
   return stringResult;

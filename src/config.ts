@@ -30,7 +30,9 @@ const getConfig = (): ENV => {
   return {
     BOT_TOKEN: process.env.BOT_TOKEN,
     MONGO_URI: process.env.MONGO_URI,
-    USE_WEBHOOK: Boolean(process.env.USE_WEBHOOK),
+    USE_WEBHOOK: process.env.USE_WEBHOOK
+      ? process.env.USE_WEBHOOK == 'true'
+      : false,
     URI_WEBHOOK: process.env.URI_WEBHOOK,
     PORT: Number(process.env.PORT)
   };
